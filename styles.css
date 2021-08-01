@@ -42,7 +42,7 @@ body {
 /* top image */
 
 .content .bg-image {
-	background-image: url("images/castles.jpeg");
+	background-image: url("images/castles.jpg");
 	background-position: 0 80%;
 	background-size: cover;
 	margin: 0;
@@ -113,7 +113,7 @@ span.fade {
 /* image break */
 
 .code-image {
-	background-image: url("images/code.jpg");
+	background-image: url("images/code.webp");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;

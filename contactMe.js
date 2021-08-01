@@ -7,6 +7,7 @@ const submitBtn = document.getElementById("submit-button");
 
 const openModal = function (e) {
 	e.preventDefault();
+	document.body.style = "overflow: hidden";
 	modal.classList.remove("hidden");
 	overlay.classList.remove("hidden");
 	contactName.focus();
@@ -15,6 +16,7 @@ const openModal = function (e) {
 const closeModal = function () {
 	modal.classList.add("hidden");
 	overlay.classList.add("hidden");
+	document.body.style = "overflow: auto";
 };
 
 btnOpenModal.forEach((btn) => {
