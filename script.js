@@ -5,6 +5,7 @@ const nav = document.getElementById("nav-menu");
 const navItems = document.getElementById("nav-lists");
 const navItem = document.querySelectorAll(".nav-item");
 const menuBurger = document.getElementById("burger");
+const imgTargets = document.querySelectorAll("img[data-src]");
 
 open.addEventListener("click", () => container.classList.add("show-nav"));
 close.addEventListener("click", () => container.classList.remove("show-nav"));
@@ -48,6 +49,31 @@ window.onload = function () {
 		}
 	}
 };
+
+//Lazy Loading Images
+
+const loadImg = function (entries, observer) {
+	const [entry] = entries;
+
+	if (!entry.isIntersecting) return;
+
+	//replace src with data-src
+	entry.target.src = entry.target.dataset.src;
+
+	entry.target.addEventListener("load", function () {
+		entry.target.classList.remove("lazy-img");
+	});
+
+	observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+	root: null,
+	threshold: 0,
+	rootMargin: "100px",
+});
+
+imgTargets.forEach((img) => imgObserver.observe(img));
 
 // Menu burger on smaller screens
 

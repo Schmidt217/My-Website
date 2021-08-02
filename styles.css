@@ -42,7 +42,7 @@ body {
 /* top image */
 
 .content .bg-image {
-	background-image: url("images/castles.jpg");
+	background-image: url("images/castles.webp");
 	background-position: 0 80%;
 	background-size: cover;
 	margin: 0;
@@ -183,6 +183,10 @@ h3 {
 
 .pages a img {
 	width: 100%;
+}
+
+.lazy-img {
+	filter: blur(20px);
 }
 
 .overview {
