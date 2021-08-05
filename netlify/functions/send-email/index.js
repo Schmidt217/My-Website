@@ -39,7 +39,7 @@ exports.handler = async function (event, context) {
 
 		const email = {
 			to: "schmidt217@gmail.com",
-			from: "schmidt217@mikeschmidt.dev", // Use the email address or domain you verified above
+			from: "mike@mikeschmidt.dev", // Use the email address or domain you verified above
 			subject: `New Contact Form: ${data.subject}`,
 			text: textMessage,
 			html: htmlMessage,
