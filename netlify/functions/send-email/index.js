@@ -10,18 +10,6 @@ const API_KEY = A.join(".");
 
 sgMail.setApiKey(process.env.API_KEY);
 
-(async () => {
-	try {
-		await sgMail.send(msg);
-	} catch (error) {
-		console.error(error);
-
-		if (error.response) {
-			console.error(error.response.body);
-		}
-	}
-})();
-
 exports.handler = async function (event, context) {
 	try {
 		if (event.httpMethod !== "POST") {
@@ -51,7 +39,7 @@ exports.handler = async function (event, context) {
 
 		const email = {
 			to: "schmidt217@gmail.com",
-			from: "mike@mikeschmidt.dev", // Use the email address or domain you verified above
+			from: "schmidt217@mikeschmidt.dev", // Use the email address or domain you verified above
 			subject: `New Contact Form: ${data.subject}`,
 			text: textMessage,
 			html: htmlMessage,
