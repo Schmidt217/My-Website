@@ -10,6 +10,18 @@ const API_KEY = A.join(".");
 
 sgMail.setApiKey(process.env.API_KEY);
 
+(async () => {
+	try {
+		await sgMail.send(msg);
+	} catch (error) {
+		console.error(error);
+
+		if (error.response) {
+			console.error(error.response.body);
+		}
+	}
+})();
+
 exports.handler = async function (event, context) {
 	try {
 		if (event.httpMethod !== "POST") {
