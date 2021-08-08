@@ -8,7 +8,7 @@ const A = [
 
 const API_KEY = A.join(".");
 
-sgMail.setApiKey(API_KEY);
+sgMail.setApiKey(process.env.API_KEY);
 
 exports.handler = async function (event, context) {
 	try {
