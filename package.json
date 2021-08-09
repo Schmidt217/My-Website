@@ -9,6 +9,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@sendgrid/mail": "^7.4.4"
+		"@sendgrid/mail": "^7.4.4",
+		"parcel": "^2.0.0-rc.0"
 	}
 }
