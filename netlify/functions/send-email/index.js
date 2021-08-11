@@ -8,7 +8,9 @@ const A = [
 
 const API_KEY = A.join(".");
 
-sgMail.setApiKey(API_KEY);
+sgMail.setApiKey(
+	"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"
+);
 
 exports.handler = async function (event, context) {
 	try {
@@ -55,7 +57,6 @@ exports.handler = async function (event, context) {
 	} catch (error) {
 		console.log(error);
 		return {
-			statusCode: 500,
 			body: JSON.stringify({ success: false, message: error }),
 		};
 	}
