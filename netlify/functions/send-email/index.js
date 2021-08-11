@@ -13,18 +13,18 @@ sgMail.setApiKey(API_KEY);
 exports.handler = async function (event, context) {
 	try {
 		if (event.httpMethod !== "POST") {
-			throw Error(
+			throw new Error(
 				`Expecting a POST request, but received a ${event.httpMethod} request instead.`
 			);
 		}
 		if (!event.body) {
-			throw Error("Body is empty. Are you trying to send an email?");
+			throw new Error("Body is empty. Are you trying to send an email?");
 		}
 
 		const data = JSON.parse(event.body);
 
 		if (!data.name) {
-			throw Error("Name is required!");
+			throw new Error("Name is required!");
 		}
 
 		const textMessage = `
@@ -51,7 +51,7 @@ exports.handler = async function (event, context) {
 			body: JSON.stringify({ success: true }),
 		};
 	} catch (error) {
-		console.log(error);
+		alert(error);
 		return {
 			body: JSON.stringify({ success: false, message: error }),
 		};
