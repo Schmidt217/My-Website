@@ -46,9 +46,6 @@ exports.handler = async function (event, context) {
 		};
 
 		await sgMail.send(email);
-		console.log(
-			`If you're looking on the console, thanks for sending me an email :)`
-		);
 		return {
 			statusCode: 200,
 			body: JSON.stringify({ success: true }),

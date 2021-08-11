@@ -80,6 +80,9 @@ form.addEventListener("submit", (e) => {
 		.then((response) => response.json())
 		.then((obj) => {
 			console.log(obj);
+			console.log(
+				`If you're looking on the console, thanks for sending me an email :)`
+			);
 			alert("Message Sent!");
 		})
 		.then(() => {
