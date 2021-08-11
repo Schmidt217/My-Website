@@ -8,7 +8,7 @@ const A = [
 
 const API_KEY = A.join(".");
 
-sgMail.setApiKey(process.env.API_KEY);
+sgMail.setApiKey(API_KEY);
 
 exports.handler = async function (event, context) {
 	try {
@@ -46,6 +46,7 @@ exports.handler = async function (event, context) {
 		};
 
 		await sgMail.send(email);
+		console.log(email);
 
 		return {
 			statusCode: 200,

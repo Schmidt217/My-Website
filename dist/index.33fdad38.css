@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+@keyframes bounce {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-20px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	background-color: #222;
+	color: whitesmoke;
+	overflow-x: hidden;
+	margin: 0;
+}
+
+.container {
+	background: linear-gradient(270deg, #323232, #3f3b3b);
+	transform-origin: top left;
+	transition: transform 0.5s linear;
+	margin: 0;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 0px;
+}
+
+.content {
+	margin: 0;
+	padding: 0;
+}
+
+/* top image */
+
+.content .bg-image {
+	background-image: url("castles.f13a76a3.webp");
+	background-position: 0 80%;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 400px;
+}
+
+.bg-image::before {
+	content: "";
+	background-color: rgba(63, 59, 59, 0.5);
+	position: absolute;
+	width: 100%;
+	height: 400px;
+}
+
+/* introduction */
+
+.introduction h1.into {
+	font-size: 5rem;
+	position: absolute;
+	color: white;
+	top: 10rem;
+	left: 20%;
+	transform: translateX(-400%);
+	transition: transform 1s ease-in;
+}
+
+.introduction h1.into.slide {
+	transform: translateX(0);
+	animation: bounce 0.5s 1s 1;
+}
+
+.introduction h1.title {
+	font-size: 6rem;
+	position: absolute;
+	left: 20%;
+	top: 14rem;
+}
+
+span {
+	opacity: 0;
+	transition: all 0.4s ease;
+	transition-delay: 2s;
+}
+
+span.fade {
+	opacity: 1;
+}
+
+.introduction small {
+	font-size: 1.25rem;
+	position: relative;
+	left: 20%;
+}
+
+/* short about section */
+
+.abb-about {
+	font-size: 2rem;
+	text-align: center;
+	margin: 7% 15%;
+}
+
+.abb-about a {
+	font-size: 1rem;
+	margin: 1% 15%;
+}
+
+/* image break */
+
+.code-image {
+	background-image: url("code.a24543df.webp");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+	height: 5rem;
+}
+
+/* code icons */
+
+.icons {
+	background-color: #fff;
+	border-radius: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 70%;
+	height: auto;
+	margin: 3% auto;
+	justify-content: center;
+	align-content: center;
+}
+
+.icons img {
+	margin: 5%;
+	flex-direction: row;
+}
+
+.jquery {
+	width: 150px;
+}
+
+.bootstrap {
+	width: 150px;
+}
+
+.node {
+	width: 150px;
+}
+
+/* my works */
+
+hr {
+	border: none;
+	border-bottom: 3px solid #b60e0e;
+	width: 30%;
+	padding: 50px 0;
+}
+
+h3 {
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.works {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.pages {
+	position: relative;
+	overflow: hidden;
+	width: 600px;
+	padding: 50px;
+}
+
+.pages h4 {
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+.pages a img {
+	width: 100%;
+}
+
+.lazy-img {
+	filter: blur(20px);
+}
+
+.overview {
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	color: #000;
+	padding: 2rem;
+	font-size: 1.5rem;
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	max-height: 100%;
+	transform: translateY(101%);
+	transition: transform 0.3s ease-in;
+}
+
+.overview p {
+	color: #000;
+	text-decoration: none;
+}
+
+.overview small {
+	color: #000;
+}
+
+.pages:hover .overview {
+	transform: translateY(0);
+}
+
+/* footer */
+
+footer {
+	height: 20rem;
+}
+
+footer h2 {
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+footer p {
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.social-media {
+	display: flex;
+	justify-content: center;
+}
+
+.social-media a {
+	font-size: 2rem;
+	margin: 1%;
+	padding-top: 3%;
+}
+
+/* navigation menu */
+
+.burger-container {
+	display: none;
+}
+
+.container.show-nav {
+	transform: rotate(-17deg);
+}
+
+.nav-container {
+	position: absolute;
+	top: -100px;
+	left: -100px;
+	z-index: 1;
+}
+
+.nav {
+	background-color: #b60e0e;
+	height: 185px;
+	width: 185px;
+	border-radius: 50%;
+	position: relative;
+	transition: transform 0.5s linear;
+}
+
+/* rotating the menu and close menu buttons */
+
+.container.show-nav .nav {
+	transform: rotate(-70deg);
+}
+
+.nav button {
+	position: absolute;
+	cursor: pointer;
+	top: 50%;
+	left: 50%;
+	height: 100px;
+	background: transparent;
+	border: 0;
+	font-size: 26px;
+	color: #fff;
+}
+
+.nav button:focus {
+	outline: none;
+}
+
+.nav button#open {
+	left: 60%;
+}
+
+.nav button#close {
+	top: 60%;
+	transform: rotate(90deg);
+	transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+	transform: translateX(0);
+	transition-delay: 0.3s;
+	animation: bounce 0.4s 0.75s 1;
+}
+
+/* nav menu when shown */
+
+nav {
+	position: absolute;
+	top: 55%;
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 30px;
+}
+
+nav ul li i a {
+	font-size: 2rem;
+	margin-right: 10px;
+}
+
+nav ul li {
+	text-transform: uppercase;
+	margin: 40px 0;
+	transform: translateX(-175%);
+	transition: transform 0.4s ease-in;
+}
+
+nav ul li + li {
+	margin-left: 15px;
+}
+
+nav ul li + li + li {
+	margin-left: 30px;
+}
+
+nav ul li + li + li + li {
+	margin-left: 45px;
+}
+
+a {
+	color: white;
+}
+
+@media (max-width: 768px) {
+	/* .container.show-nav .nav {
+		display: none;
+	} */
+
+	.nav button {
+		display: none;
+	}
+	.nav {
+		display: none;
+	}
+
+	nav {
+		position: absolute;
+		top: 0;
+		background-color: #b60e0e;
+		width: 175px;
+		height: 100vh;
+		transition: all 300ms ease-in-out;
+		transform: translateX(-100%);
+	}
+
+	.burger-container {
+		width: 80px;
+		height: 80px;
+		margin: 1%;
+
+		cursor: pointer;
+		display: inline-block;
+		position: absolute;
+		z-index: 10;
+	}
+
+	.burger {
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		position: relative;
+	}
+
+	.line {
+		width: 25px;
+		height: 2px;
+		background-color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.line::before {
+		content: "";
+		position: absolute;
+		top: -5px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		transition: all 300ms ease-in-out;
+	}
+
+	.line::after {
+		content: "";
+		position: absolute;
+		top: 5px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		transition: all 300ms ease-in-out;
+	}
+
+	#burger-menu::before {
+		width: 10px;
+		left: 0%;
+		transform: translate(0px, 0);
+	}
+
+	#burger-menu::after {
+		width: 10px;
+		left: 80%;
+	}
+
+	.burger.active #burger-menu {
+		background-color: transparent;
+	}
+
+	.burger.active #burger-menu::before {
+		top: 0;
+		left: 0;
+		width: 25px;
+		transform: rotate(-45deg);
+	}
+
+	.burger.active #burger-menu:after {
+		top: 0;
+		left: 0;
+		width: 25px;
+		transform: rotate(45deg);
+	}
+	nav.active-small {
+		transform: translateX(0);
+	}
+
+	nav ul {
+		list-style-type: none;
+		padding: 30px;
+		text-align: center;
+	}
+
+	nav ul li i a {
+		font-size: 2rem;
+		margin-right: 10px;
+	}
+	nav ul li {
+		text-transform: uppercase;
+
+		margin: 40px 0;
+		transform: translateX(0%);
+		transition: transform 0.4s ease-in;
+	}
+
+	nav ul li + li {
+		margin-left: 0px;
+	}
+
+	nav ul li + li + li {
+		margin-left: 0px;
+	}
+
+	nav ul li + li + li + li {
+		margin-left: 0px;
+	}
+
+	.introduction h1.into {
+		font-size: 4rem;
+		top: 10rem;
+		left: 10%;
+	}
+	.introduction h1.title {
+		font-size: 5rem;
+		left: 10%;
+	}
+	.introduction small {
+		left: 10%;
+		font-size: 1rem;
+	}
+	.icons {
+		width: 90%;
+	}
+
+	hr {
+		width: 50%;
+	}
+
+	.pages {
+		width: 90%;
+		padding: 0;
+	}
+
+	footer h2 {
+		font-size: 2rem;
+	}
+
+	footer p {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.burger-container {
+		width: 40px;
+		height: 40px;
+		margin: 5%;
+	}
+	.line {
+		height: 2px;
+	}
+	.content .bg-image {
+		height: 250px;
+	}
+	.content .bg-image::before {
+		height: 250px;
+	}
+	.introduction h1.into {
+		font-size: 3rem;
+		top: 5%;
+		left: 5%;
+	}
+	.introduction h1.title {
+		font-size: 4rem;
+		left: 5%;
+		top: 15%;
+	}
+	.introduction small {
+		left: 1%;
+		font-size: 0.75rem;
+	}
+	.abb-about {
+		font-size: 1rem;
+		text-align: center;
+		margin: 7%;
+	}
+
+	.abb-about a {
+		font-size: 0.9rem;
+		margin: 1% 15%;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	.pages h4 {
+		font-size: 1.5rem;
+	}
+
+	.overview {
+		font-size: 1rem;
+	}
+
+	footer h2 {
+		font-size: 2rem;
+	}
+	footer p {
+		font-size: 1rem;
+	}
+	.social-media {
+		justify-content: center;
+		position: relative;
+		bottom: -20%;
+	}
+}
+
+/*# sourceMappingURL=index.33fdad38.css.map */

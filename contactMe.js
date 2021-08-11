@@ -63,6 +63,7 @@ form.addEventListener("submit", (e) => {
 		subject: _subject,
 		message: _message,
 	};
+	console.log(data);
 
 	fetch("/.netlify/functions/send-email", {
 		method: "POST",
@@ -74,6 +75,7 @@ form.addEventListener("submit", (e) => {
 		.then((response) => response.json())
 		.then((obj) => {
 			console.log(obj);
+			console.log(response);
 			alert("Message Sent!");
 		})
 		.then(() => {
@@ -81,7 +83,10 @@ form.addEventListener("submit", (e) => {
 			form.reset();
 		})
 		.then(closeModal)
-		.catch((err) => alert(err.message));
+		.catch((err) => {
+			console.log(err);
+			alert(err.message);
+		});
 
 	_name = _email = _message = _subject = "";
 });

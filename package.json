@@ -4,12 +4,17 @@
 	"description": "",
 	"main": "contactMe.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "parcel index.html"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@sendgrid/mail": "^7.4.4",
+		"@sendgrid/mail": "^7.4.6",
 		"parcel": "^2.0.0-rc.0"
+	},
+	"devDependencies": {
+		"@parcel/packager-raw-url": "^2.0.0-rc.0",
+		"@parcel/transformer-image": "^2.0.0-rc.0",
+		"@parcel/transformer-webmanifest": "^2.0.0-rc.0"
 	}
 }
