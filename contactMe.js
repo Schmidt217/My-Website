@@ -75,7 +75,6 @@ form.addEventListener("submit", (e) => {
 		.then((response) => response.json())
 		.then((obj) => {
 			console.log(obj);
-			console.log(response);
 			alert("Message Sent!");
 		})
 		.then(() => {
