@@ -9,7 +9,11 @@ const openModal = function (e) {
 	e.preventDefault();
 	document.body.style = "overflow: hidden";
 	document.body.style = "position: fixed";
-	document.body.style.top = `-${window.scrollY}px`;
+	// const scrollY = document.body.style.top;
+	// document.body.style.position = "";
+	// document.body.style.top = "";
+	// window.scrollTo(0, parseInt(scrollY || "0") * -1);
+	// document.body.style.top = `-${window.scrollY}px`;
 	modal.classList.remove("hidden");
 	overlay.classList.remove("hidden");
 	contactName.focus();
@@ -19,10 +23,6 @@ const closeModal = function () {
 	modal.classList.add("hidden");
 	overlay.classList.add("hidden");
 	document.body.style = "overflow: auto";
-	const scrollY = document.body.style.top;
-	document.body.style.position = "";
-	document.body.style.top = "";
-	window.scrollTo(0, parseInt(scrollY || "0") * -1);
 };
 
 btnOpenModal.forEach((btn) => {
