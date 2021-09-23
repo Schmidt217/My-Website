@@ -85,7 +85,6 @@ form.addEventListener("submit", (e) => {
 		})
 		.then(closeModal)
 		.catch((err) => {
-			console.log(err);
 			alert(err.message);
 		});
 
