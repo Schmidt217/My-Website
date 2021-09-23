@@ -1,8 +1,3 @@
-import React, { Component } from "react";
-import "./App.css";
-
-console.log(process.env.REACT_APP_API_KEY);
-
 const open = document.getElementById("open");
 const close = document.getElementById("close");
 const container = document.querySelector(".container");
