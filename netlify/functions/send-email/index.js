@@ -1,8 +1,10 @@
 const sgMail = require("@sendgrid/mail");
 const dotenv = require("dotenv");
-dotenv.config();
+dotenv.config({ path: "../../../.env" });
 
-const api_key = process.env.API_KEY;
+console.log(process.env.SENDGRID_API_KEY);
+
+const api_key = process.env.SENDGRID_API_KEY;
 
 // const A = [
 // 	"SG",
