@@ -1,20 +1,18 @@
 const sgMail = require("@sendgrid/mail");
-// const dotenv = require("dotenv");
-// dotenv.config({ path: "../../../.env" });
+const dotenv = require("dotenv");
+dotenv.config();
 
-// console.log(process.env);
+const api_key = process.env.API_KEY;
 
-// const api_key = process.env.API_KEY;
+// const A = [
+// 	"SG",
+// 	"QMkoHwckT9WaiuiN4LsZjw",
+// 	"Xr2UDzCeHumsIRRZKmtQ3c8WlB9WqetUAjqjBOvhoM0",
+// ];
 
-const A = [
-	"SG",
-	"QMkoHwckT9WaiuiN4LsZjw",
-	"Xr2UDzCeHumsIRRZKmtQ3c8WlB9WqetUAjqjBOvhoM0",
-];
+// const API_KEY = A.join(".");
 
-const API_KEY = A.join(".");
-
-sgMail.setApiKey(API_KEY);
+sgMail.setApiKey(api_key);
 
 exports.handler = async function (event, context) {
 	try {
