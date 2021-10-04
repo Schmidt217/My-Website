@@ -190,18 +190,25 @@
 			<button class="btn-close-modal">&times;</button>
 			<h2 class="modal-header">contact</h2>
 			<form class="modal-form" id="contact-form">
-				<input type="text" class="contact-input name" placeholder="Name" />
+				<input
+					type="text"
+					class="contact-input name"
+					placeholder="Name"
+					required
+				/>
 
 				<input
 					type="email"
 					class="contact-input email"
 					placeholder="Email Address"
+					required
 				/>
 
 				<input
 					type="text"
 					class="contact-input subject"
 					placeholder="Subject"
+					required
 				/>
 
 				<textarea
@@ -210,6 +217,7 @@
 					cols="20"
 					rows="10"
 					placeholder="Message"
+					required
 				></textarea>
 				<button id="submit-button">submit</button>
 			</form>
