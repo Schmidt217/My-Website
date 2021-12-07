@@ -141,15 +141,6 @@ span.fade {
 .icons img {
 	margin: 5%;
 	flex-direction: row;
-}
-
-.jquery {
-	width: 150px;
-}
-.bootstrap {
-	width: 150px;
-}
-.node {
 	width: 150px;
 }
 
