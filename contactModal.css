@@ -7,6 +7,8 @@
 	transform: translate(-50%, -50%);
 	width: 90%;
 	height: 90%;
+	max-width: 1200px;
+	max-height: 700px;
 	background-color: #3f3b3b;
 	padding: 2rem 6rem 0 6rem;
 	box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
