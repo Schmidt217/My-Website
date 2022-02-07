@@ -87,6 +87,4 @@ form.addEventListener("submit", (e) => {
 		.catch((err) => {
 			alert(err.message);
 		});
-
-	_name = _email = _message = _subject = "";
 });
