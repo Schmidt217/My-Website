@@ -48,6 +48,7 @@ exports.handler = async function (event, context) {
 		};
 	} catch (error) {
 		alert(error);
+		console.error(error);
 		return {
 			body: JSON.stringify({ success: false, message: error }),
 		};
