@@ -18,7 +18,7 @@ exports.handler = async function (event, context) {
 		}
 
 		const data = JSON.parse(event.body);
-
+		console.log(data);
 		if (!data.name) {
 			throw new Error("Name is required!");
 		}
