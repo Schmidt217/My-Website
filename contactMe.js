@@ -62,6 +62,7 @@ form.addEventListener("submit", (e) => {
 	params.append("email", _email);
 	params.append("subject", _subject);
 	params.append("message", _message);
+	params.append("form-name", "contact"); // the name of your form in Netlify
 	const urlEncodedData = params.toString();
 
 	fetch("/", {
@@ -80,8 +81,5 @@ form.addEventListener("submit", (e) => {
 				console.error(res);
 			}
 		})
-		.then(closeModal)
-		.catch((err) => {
-			alert(err.message);
-		});
+		.then(closeModal);
 });
