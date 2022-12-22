@@ -76,6 +76,8 @@ form.addEventListener("submit", (e) => {
 				alert("message sent!");
 				submitBtn.innerHTML = "Submit";
 				form.reset();
+			} else {
+				console.error(res);
 			}
 		})
 		.then(closeModal)
