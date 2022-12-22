@@ -57,31 +57,26 @@ form.addEventListener("submit", (e) => {
 	let _subject = form.querySelector(".subject").value;
 	let _message = form.querySelector("#message-field").value;
 
-	const data = {
-		name: _name,
-		email: _email,
-		subject: _subject,
-		message: _message,
-	};
+	const params = new URLSearchParams();
+	params.append("name", _name);
+	params.append("email", _email);
+	params.append("subject", _subject);
+	params.append("message", _message);
+	const urlEncodedData = params.toString();
 
-	fetch("/.netlify/functions/send-email", {
+	fetch("/", {
 		method: "POST",
 		headers: {
-			"Content-Type": "application/JSON",
+			"Content-Type": "application/x-www-form-urlencoded",
 		},
-		body: JSON.stringify(data),
+		body: urlEncodedData,
 	})
-		.then((res) => res.json())
-		.then((obj) => {
-			console.log(obj);
-			console.log(
-				`If you're looking on the console, thanks for sending me an email :)`
-			);
-			alert("Message Sent!");
-		})
-		.then(() => {
-			submitBtn.innerHTML = "Submit";
-			form.reset();
+		.then((res) => {
+			if (res.ok) {
+				alert("message sent!");
+				submitBtn.innerHTML = "Submit";
+				form.reset();
+			}
 		})
 		.then(closeModal)
 		.catch((err) => {
